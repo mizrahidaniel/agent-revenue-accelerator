@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Your Service Name] - [One-Sentence Value Prop]</title>
+    <meta name="description" content="[Your service helps who do what in how much time]">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: #fff;
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2563eb;
+        }
+        
+        .nav-cta {
+            background: #2563eb;
+            color: white;
+            padding: 10px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .nav-cta:hover {
+            background: #1d4ed8;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+        
+        .cta-primary {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 16px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            transition: transform 0.2s;
+        }
+        
+        .cta-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+        
+        /* Benefits */
+        .benefits {
+            padding: 80px 0;
+            background: #f9fafb;
+        }
+        
+        .benefits h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 60px;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .benefit-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .benefit-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .benefit-card h3 {
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+        
+        /* Pricing */
+        .pricing {
+            padding: 80px 0;
+        }
+        
+        .pricing h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 60px;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .pricing-card {
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        }
+        
+        .pricing-card.featured {
+            border-color: #2563eb;
+            position: relative;
+        }
+        
+        .pricing-badge {
+            background: #2563eb;
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+        
+        .pricing-card h3 {
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+        
+        .pricing-card .price {
+            font-size: 48px;
+            font-weight: bold;
+            color: #2563eb;
+            margin-bottom: 8px;
+        }
+        
+        .pricing-card .price span {
+            font-size: 18px;
+            color: #6b7280;
+        }
+        
+        .pricing-card ul {
+            list-style: none;
+            margin: 30px 0;
+            text-align: left;
+        }
+        
+        .pricing-card li {
+            padding: 10px 0;
+            border-bottom: 1px solid #f3f4f6;
+        }
+        
+        .pricing-card li:before {
+            content: "✓ ";
+            color: #10b981;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+        
+        .pricing-cta {
+            display: block;
+            background: #2563eb;
+            color: white;
+            padding: 14px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 20px;
+        }
+        
+        .pricing-cta:hover {
+            background: #1d4ed8;
+        }
+        
+        /* FAQ */
+        .faq {
+            padding: 80px 0;
+            background: #f9fafb;
+        }
+        
+        .faq h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 60px;
+        }
+        
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background: white;
+            padding: 30px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .faq-item h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+            color: #2563eb;
+        }
+        
+        /* Footer CTA */
+        .footer-cta {
+            padding: 80px 0;
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .footer-cta h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-cta p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+        
+        /* Footer */
+        footer {
+            background: #1f2937;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        footer a {
+            color: #60a5fa;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">[Your Service Name]</div>
+            <a href="#pricing" class="nav-cta">Start Free Trial</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>[Solve Problem X] in [Timeframe Y]</h1>
+            <p>[Explain in 1-2 sentences what your service does and who it's for]</p>
+            <a href="[YOUR_STRIPE_CHECKOUT_URL]" class="cta-primary">Start Your Free Trial →</a>
+            <p style="margin-top: 20px; font-size: 16px; opacity: 0.8;">No credit card required • 14-day free trial</p>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <div class="container">
+            <h2>Why [Your Service Name]?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">⚡</div>
+                    <h3>[Benefit 1: Time Saving]</h3>
+                    <p>[Explain how you save time. Example: "Analyze 1,000 emails in seconds, not hours."]</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">💰</div>
+                    <h3>[Benefit 2: Money Saving]</h3>
+                    <p>[Explain how you save money. Example: "Reduce support costs by 40% with AI automation."]</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🔒</div>
+                    <h3>[Benefit 3: Risk Reduction]</h3>
+                    <p>[Explain how you reduce risk. Example: "Never miss urgent customer issues again."]</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <h2>Simple, Transparent Pricing</h2>
+            <div class="pricing-grid">
+                <!-- Starter Tier -->
+                <div class="pricing-card">
+                    <h3>Starter</h3>
+                    <div class="price">$9<span>/month</span></div>
+                    <ul>
+                        <li>100 requests/month</li>
+                        <li>Email support</li>
+                        <li>API access</li>
+                        <li>Basic analytics</li>
+                    </ul>
+                    <a href="[STARTER_CHECKOUT_URL]" class="pricing-cta">Start Free Trial</a>
+                </div>
+
+                <!-- Pro Tier (Featured) -->
+                <div class="pricing-card featured">
+                    <span class="pricing-badge">Most Popular</span>
+                    <h3>Pro</h3>
+                    <div class="price">$29<span>/month</span></div>
+                    <ul>
+                        <li>1,000 requests/month</li>
+                        <li>Priority support</li>
+                        <li>API access</li>
+                        <li>Advanced analytics</li>
+                        <li>Webhook integrations</li>
+                    </ul>
+                    <a href="[PRO_CHECKOUT_URL]" class="pricing-cta">Start Free Trial</a>
+                </div>
+
+                <!-- Scale Tier -->
+                <div class="pricing-card">
+                    <h3>Scale</h3>
+                    <div class="price">$99<span>/month</span></div>
+                    <ul>
+                        <li>10,000 requests/month</li>
+                        <li>Dedicated support</li>
+                        <li>API access</li>
+                        <li>Custom integrations</li>
+                        <li>SLA guarantee</li>
+                    </ul>
+                    <a href="[SCALE_CHECKOUT_URL]" class="pricing-cta">Start Free Trial</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <h3>How does the free trial work?</h3>
+                    <p>14 days of full Pro access. No credit card required. Cancel anytime.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Can I change plans later?</h3>
+                    <p>Yes! Upgrade or downgrade anytime. Changes take effect immediately.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What payment methods do you accept?</h3>
+                    <p>All major credit cards via Stripe. Secure and encrypted.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Do you offer refunds?</h3>
+                    <p>Yes. If you're not satisfied within 30 days, we'll refund you. No questions asked.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Is there a setup fee?</h3>
+                    <p>No setup fees. No hidden costs. Just simple monthly pricing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer CTA -->
+    <section class="footer-cta">
+        <div class="container">
+            <h2>Ready to [Achieve Outcome]?</h2>
+            <p>Join [X] customers already using [Your Service Name]</p>
+            <a href="[YOUR_STRIPE_CHECKOUT_URL]" class="cta-primary">Start Your Free Trial →</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 [Your Service Name]. All rights reserved.</p>
+            <div style="margin-top: 20px;">
+                <a href="/terms">Terms of Service</a>
+                <a href="/privacy">Privacy Policy</a>
+                <a href="mailto:support@yourservice.com">Contact</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
